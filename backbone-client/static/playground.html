@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="checkmate backbone app">
+    <meta name="author" content="kevin.alford@pixelflow.org">
+    <!-- <link rel="shortcut icon" href="favicon.png"> -->
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap-3.0.0.css" rel="stylesheet">
+    <link href="css/bootstrap-glyphicons-1.0.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/application.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">checkmate</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- login with user and lock glyph -->
+
+      <div class="row">
+
+        <div class="col-lg-6 col-sm-12">
+            <h1 class="checkmate-logo"><span class="glyphicon glyphicon-check">checkmate</h1>
+        </div>
+
+        <div class="col-lg-6 col-sm-12">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span>
+</span>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+
+          <br />
+
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span>
+</span>
+            <input type="text" class="form-control" placeholder="Password">
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- scan button with barcode icon -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <button type="button" class="btn btn-primary btn-lg btn-block">
+            <span class="glyphicon glyphicon-barcode"></span>
+          </button>
+        </div>
+      </div>
+
+
+
+      <!-- visibility tests -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h4>Visible on...</h4>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <h3>
+              <span class="label label-default hidden-xs" >X-small <span class="glyphicon glyphicon-remove"></span></span>
+              <span class="label label-success visible-xs">X-small <span class="glyphicon glyphicon-ok"    ></span></span>
+          
+            </h3>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <h3>
+              <span class="label label-default hidden-sm" >Small <span class="glyphicon glyphicon-remove"></span></span>
+              <span class="label label-success visible-sm">Small <span class="glyphicon glyphicon-ok"    ></span></span>
+            </h3>
+          </div>
+          <div class="clearfix visible-xs"></div>
+
+          <div class="col-xs-6 col-sm-3">
+            <h3>
+              <span class="label label-default hidden-md" >Medium <span class="glyphicon glyphicon-remove"></span></span>
+              <span class="label label-success visible-md">Medium <span class="glyphicon glyphicon-ok"    ></span></span>
+            </h3>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <h3>
+              <span class="label label-default hidden-lg" >Large <span class="glyphicon glyphicon-remove"></span></span>
+              <span class="label label-success visible-lg">Large <span class="glyphicon glyphicon-ok"    ></span></span>
+            </h3>
+          </div>
+        </div>
+
+      <!-- end visibility -->
+
+
+
+
+    </div><!-- /.container -->
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap-3.0.0.js"></script>
+  </body>
+</html>

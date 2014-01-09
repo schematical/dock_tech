@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="checkmate backbone app">
+    <meta name="author" content="kevin.alford@pixelflow.org">
+
+    <title>Checkmate</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="css/bootstrap-3.0.0.css" rel="stylesheet">
+    <link href="css/bootstrap-glyphicons-1.0.css" rel="stylesheet"> -->
+
+    <link href="css/bootstrap-wip.css" rel="stylesheet">
+    <link href="css/bootstrap-theme-wip.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/application.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- cordova test -->
+    <div class="row" style="display:none">
+      <div class="col-xs-12">
+        <button type="button" id="clickyalert" class="btn btn-primary">Alert</button>
+        <button type="button" id="scanbutton" class="btn btn-info">Scan</button>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <div class="event listening">Connecting to Device</div>
+                <div class="event received">Device is Ready</div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="content" class="container-fluid">
+    </div>
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="barcodescanner.js"></script>
+
+    <script src="js/lib/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+    <script src="js/lib/bootstrap-wip.js"></script>
+    <script src="js/lib/underscore-1.5.1.js"></script>
+    <script src="js/lib/backbone-1.0.0.js"></script>
+    <script src="js/lib/backbone.localStorage-1.1.6.js"></script>
+    <script src="js/lib/mustache-0.7.2.js"></script>
+
+    <!-- App -->
+    <script src="js/application.js"></script>
+
+    <!-- Models -->
+    <script src="js/models/patient.js"></script>
+    <script src="js/models/nurse.js"></script>
+    <script src="js/models/disposable.js"></script>
+    <script src="js/models/shift.js"></script>
+
+    <!-- Routes -->
+    <script src="js/routers/application-router.js"></script>
+
+    <!-- View Templates -->
+      <!-- Login View -->
+      <script id="loginViewTemplate" type="text/template">
+        <div class="row">
+
+          <div class="col-xs-12">
+              <div class="checkmate-logo-big-pad hidden-xs">&nbsp;</div>
+              <div class="hidden-landscape">
+                <div class="checkmate-logo-small-pad visible-xs">&nbsp;</div>
+              </div>
+              <h1 class="checkmate-logo"><span class="glyphicon glyphicon-check"></span>HECKMATE</h1>
+          </div>
+
+          <div class="clearfix visible-xs"></div>
+
+          <div class="col-xs-12">
+            <div class="alert alert-error alert-hidden">Invalid Username or Password.</div>
+          </div>
+
+          <div class="col-xs-12">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+              <input id="username" type="text" class="form-control" placeholder="Username">
+            </div>
+
+            <br />
+
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              <input id="password" type="text" class="form-control" placeholder="Password">
+            </div>
+
+            <br />
+
+            <a class="login btn btn-primary btn-lg btn-block">
+              Login
+            </a>
+
+          </div>
+        </div>
+      </script>
+
+
+      <!-- Nurse Status Bar -->
+      <script id="nurseStatusTemplate" type="text/template">
+        <div class="nurse-status">
+          <div class="nurse-name"><strong>{{name}}</strong></div>
+          <div class="nurse-shift">
+            <span class="label label-info">{{shift.name}} Shift</span>
+          </div>
+          <div class="current-time">{{time}}</div>
+          <div class="clear"></div>
+        </div>
+      </script>
+
+
+      <!-- Side Bar -->
+      <!-- TODO since its another append/view -->
+
+
+      <!-- Patients Table View -->
+      <script id="patientPartialTemplate" type="text/template">
+        <p> Patient: <a class="showPatient"> {{name}}</a> </p> 
+      </script>
+
+      <script id="patientCollectionTemplate" type="text/template">
+        <div class="patientCollection"></div>
+      </script>
+
+
+      <!-- Patient Show -->
+      <script id="patientTemplate" type="text/template">
+        <p> name {{name}} </p> 
+        <p> age  {{age}}  </p> 
+        <p> list devices here </p>
+      </script>
+
+
+      <!-- Disposable Table View -->
+      <script id="disposablePartialTemplate" type="text/template">
+        <td>{{patient.name}}</td>
+        <td>{{duration}} hr</td>
+        <td>{{type}}</td>
+        <td>{{patient.room}}</td>
+      </script>
+
+      <script id="disposableCollectionTemplate" type="text/template">
+        <!-- landscape mode -->
+        <div class="row hidden-portrait">
+
+          <div class="col-xs-3 checkmate-nav-menu-col info-col fixed-left-col">
+            <div class="info-box scan-now showScanner">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-barcode"></span></div>
+                <div class="right-info">
+                  <div class="primary">Scan</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box patient-list showDisposables">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-user"></span></div>
+                <div class="right-info">
+                  <div class="primary">Patients</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box metrics-view showMetrics">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-stats"></span></div>
+                <div class="right-info">
+                  <div class="primary">Metrics</div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+
+
+        <div class="row hidden-portrait">
+
+          <!-- hack for fixed position column to fill in space-->
+          <div class="col-xs-3">
+            &nbsp;
+          </div>
+
+          <div class="col-xs-9">
+            <!-- Patient List -->
+            <table class="table table-bordered table-condensed">
+
+              <colgroup class="patient-col"></colgroup>
+              <colgroup class="duration-col"></colgroup>
+              <colgroup class="device-col"></colgroup>
+              <colgroup class="room-col"></colgroup>
+
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Duration</th>
+                  <th>Device</th>
+                  <th>Room</th>
+                </tr>
+              </thead>
+   
+              <tbody class="disposableCollection">
+              </tbody>
+            </table>
+          </div>
+
+        </div> <!-- /.row -->
+      </script>
+
+
+      <!-- Disposable Show -->
+      <script id="disposableTemplate" type="text/template">
+        <p> type  {{type}}  </p> 
+        <p> hours {{hours}} </p> 
+        <p> patient <a class="showPatient">{{patient.name}}</a> </p> 
+      </script>
+
+
+      <!-- Metrics -->
+      <script id="metricsViewTemplate" type="text/template">
+        <!-- landscape mode -->
+        <div class="row hidden-portrait">
+
+          <div class="col-xs-3 checkmate-nav-menu-col info-col fixed-left-col">
+            <div class="info-box scan-now showScanner">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-barcode"></span></div>
+                <div class="right-info">
+                  <div class="primary">Scan</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box patient-list showDisposables">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-user"></span></div>
+                <div class="right-info">
+                  <div class="primary">Patients</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box metrics-view showMetrics">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-stats"></span></div>
+                <div class="right-info">
+                  <div class="primary">Metrics</div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+
+
+        <div class="row hidden-portrait">
+
+          <!-- hack for fixed position column to fill in space-->
+          <div class="col-xs-3">
+            &nbsp;
+          </div>
+
+          <div class="col-xs-9">
+            <div class="metrics"><img src="images/metrics.png" /></div>
+          </div>
+
+        </div> <!-- /.row -->
+      </script>
+
+
+      <!-- Scanner -->
+      <script id="scannerViewTemplate" type="text/template">
+        <!-- landscape mode -->
+        <div class="row hidden-portrait">
+
+          <div class="col-xs-3 checkmate-nav-menu-col info-col fixed-left-col">
+            <div class="info-box scan-now showScanner">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-barcode"></span></div>
+                <div class="right-info">
+                  <div class="primary">Scan</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box patient-list showDisposables">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-user"></span></div>
+                <div class="right-info">
+                  <div class="primary">Patients</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-box metrics-view showMetrics">
+              <div class="box-content">
+                <div class="left-info"><span class="glyphicon glyphicon-stats"></span></div>
+                <div class="right-info">
+                  <div class="primary">Metrics</div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+
+          <!-- hack for fixed position column to fill in space-->
+          <div class="col-xs-3">
+            &nbsp;
+          </div>
+
+          <div class="col-xs-9 full-height">
+
+            <!-- scanner box -->
+            <div class="row">
+
+              <div class="col-xs-12 info-col scanner-border">
+                <div class="patient-scanned info-box {{patient_scanned}}">
+                  <div class="box-content">
+                    <div class="left-info"><span class="glyphicon glyphicon-user"></span></div>
+                    <div class="right-info">
+                      <div class="primary">{{patient_name}}</div>
+                      <div class="secondary">{{patient_info}}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="nurse-scanned info-box {{nurse_scanned}}">
+                  <div class="box-content">
+                    <div class="left-info"><span class="glyphicon glyphicon-plus-sign"></span></div>
+                    <div class="right-info">
+                      <div class="primary">{{nurse_name}}</div>
+                      <div class="secondary">{{nurse_info}}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="device-scanned info-box {{device_scanned}}">
+                  <div class="box-content">
+                    <div class="left-info"><span class="glyphicon glyphicon-record"></span></div>
+                    <div class="right-info">
+                      <div class="primary">{{device_name}}</div>
+                      <div class="secondary">{{device_info}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+
+        </div> <!-- /.row -->
+      </script>
+
+
+    <!-- Views -->
+    <script src="js/views/application-view.js"></script>
+    <script src="js/views/login-view.js"></script>
+    <script src="js/views/patient-view.js"></script>
+    <script src="js/views/nurse-view.js"></script>
+    <script src="js/views/disposable-view.js"></script>
+    <script src="js/views/scanner-view.js"></script>
+    <script src="js/views/metrics-view.js"></script>
+    <script src="js/views/nursestatus-view.js"></script>
+  </body>
+</html>

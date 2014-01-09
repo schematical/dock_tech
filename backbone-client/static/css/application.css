@@ -1,0 +1,253 @@
+/* Portrait */
+@media screen and (orientation:portrait) {
+    /* Portrait styles */
+    .hidden-landscape { display: block !important; }
+    .hidden-portrait  { display: none  !important; }
+}
+
+/* Landscape */
+@media screen and (orientation:landscape) {
+    /* Landscape styles */
+    .hidden-landscape { display: none  !important; }
+    .hidden-portrait  { display: block !important; }
+}
+
+
+
+/* LOGIN VIEW ***************************/
+
+.checkmate-logo
+{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* Padding */
+.checkmate-logo-big-pad
+{
+  margin-top: 100px;
+}
+
+
+.checkmate-logo-small-pad
+{
+  margin-top: 50px;
+}
+
+
+
+/* Checkmate theming */
+.checkmate-content
+{
+  background: #3498db;
+  color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.checkmate-content .btn-primary, 
+.checkmate-content .input-group-addon
+{
+  background: #bdc3c7;
+  color: #fff;
+}
+
+
+.checkmate-content .btn,
+.checkmate-content .form-control,
+.checkmate-content .input-group-addon
+{
+  border-radius: 0;
+  border: 1px solid #bdc3c7;
+}
+
+
+
+/* LIST VIEW ****************************/
+
+/* Bottom Navigation */
+.checkmate-list-content .row.bottom-fixed
+{
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  z-index: 2000;
+}
+
+.checkmate-list-content .checkmate-bottom-pad
+{
+  margin-bottom: 60px;
+}
+
+.checkmate-list-content .checkmate-nav-menu
+{
+  background: #34495e;
+  z-index: 2000;
+}
+
+
+/* Navigation theme */
+.checkmate-list-content .checkmate-nav-menu li a
+{
+  border-radius: 0;
+  color: #eee;
+  border-bottom: 2px solid #2c3e50;
+}
+
+.checkmate-list-content .checkmate-nav-menu li a:hover
+{
+  background: #425D78;
+  color: #fff;
+}
+
+.checkmate-list-content .checkmate-nav-menu li.primary a
+{
+  background: #16A085;
+  color: #fff;
+}
+
+.checkmate-list-content .checkmate-nav-menu li.active a
+{
+  background-color: #2c3e50;
+  color: #16A085;
+}
+
+
+/* Portrait icons */
+.checkmate-list-content .hidden-landscape .checkmate-nav-menu 
+{
+  font-size: 200%;
+}
+
+.checkmate-list-content .hidden-landscape .checkmate-nav-menu ul
+{
+  width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Landscape icons */
+.checkmate-list-content .hidden-portrait .checkmate-nav-menu
+{
+  font-size: 150%;
+}
+
+
+/* Table */
+.checkmate-list-content .table
+{
+  font-size: 150%;
+  margin-top: 40px;
+}
+
+.checkmate-list-content .table td,
+.checkmate-list-content .table th
+{
+  border-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+
+/* table width hack */
+.checkmate-list-content .table th
+{
+  /*width: 150px;*/
+  width: 29.6%;
+}
+
+
+.checkmate-list-content .table thead
+{
+  background: #ecf0f1;
+  position: fixed;
+  top: 0;
+  border-bottom: 4px solid #bdc3c7;
+  width: 100%;
+}
+
+.checkmate-list-content colgroup
+{
+  width: 25%;
+}
+
+
+
+/* SCANNER VIEW */
+
+/* full height columns */
+body.checkmate-scanner-content, html
+{
+  height: 100%;
+}
+
+.checkmate-scanner-content .container-fluid,
+.checkmate-scanner-content .row,
+.checkmate-scanner-content .info-col
+{
+  height: 100%;
+}
+
+.checkmate-scanner-content .scan-col
+{
+  height: 100%;
+}
+
+
+/* Fluid centering */
+.checkmate-scanner-content .info-box
+{
+  height: 33.3%;
+  display: table;
+  width: 100%;
+}
+
+.checkmate-scanner-content .info-box .box-content
+{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+/* Info box themes */
+.checkmate-scanner-content .info-box
+{
+  border-bottom: 2px solid #2c3e50;
+  color: #95A5A6;
+  padding-left: 10%;
+}
+
+.checkmate-scanner-content .info-box.active
+{
+  color: #1abc9c;
+}
+
+.left-info
+{
+  font-size: 300%;
+  float: left;
+}
+
+.right-info
+{
+  float: left;
+  margin-left: 10%;
+}
+
+.checkmate-scanner-content .scan-col
+{
+  background: #ECF0F1;
+}
+
+.checkmate-scanner-content .info-col
+{
+  background: #34495E;
+}
+
+
+.checkmate-scanner-content .primary
+{
+  font-size: 150%;
+}

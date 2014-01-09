@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="checkmate backbone app">
+    <meta name="author" content="kevin.alford@pixelflow.org">
+    <!-- <link rel="shortcut icon" href="favicon.png"> -->
+
+    <title>Patient List View</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="css/bootstrap-3.0.0.css" rel="stylesheet">
+    <link href="css/bootstrap-glyphicons-1.0.css" rel="stylesheet"> -->
+
+    <link href="css/bootstrap-wip.css" rel="stylesheet">
+    <link href="css/bootstrap-theme-wip.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/application.css" rel="stylesheet">
+  </head>
+
+  <body class="checkmate-list-content">
+
+    <div class="container-fluid">
+
+      <!-- portrait mode -->
+      <div class="row hidden-landscape bottom-fixed">
+
+        <div class="col-xs-12 checkmate-nav-menu">
+            <ul class="nav nav-pills">
+              <!-- scan     --><li class="primary"> <a href="scan-view.html"><span class="glyphicon glyphicon-barcode" ></span></a> </li>
+              <!-- today    --><li> <a href="#"><span class="glyphicon glyphicon-calendar"></span></a> </li>
+              <!-- patients --><li> <a href="#"><span class="glyphicon glyphicon-user"   ></span></a> </li>
+              <!-- devices  --><li class="active"> <a href="#"><span class="glyphicon glyphicon-record"  ></span></a> </li>
+              <!-- all      --><li> <a href="#"><span class="glyphicon glyphicon-list"    ></span></a> </li>
+              <!-- metrics  --><li> <a href="#"><span class="glyphicon glyphicon-stats"   ></span></a> </li>
+            </ul>
+        </div>
+
+      </div>
+
+
+      <div class="row hidden-landscape">
+
+        <div class="col-xs-12">
+          <!-- Patient List -->
+          <table class="table table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Patients</th>
+                <th>Devices</th>
+                <th>Room</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+ 
+            <tbody>
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara LAST</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+
+      <div class="row hidden-landscape">
+        <div class="col-xs-12 checkmate-list-bottom-pad">&nbsp;</div>
+      </div>
+
+
+
+      <!-- landscape mode -->
+      <div class="row hidden-portrait">
+
+        <div class="col-xs-3 checkmate-nav-menu-col" style="position: fixed; left: 0px;">
+          <!-- Side Navigation -->
+          <ul class="nav nav-pills nav-stacked checkmate-nav-menu">
+            <!-- scan     --><li class="primary"> <a href="scan-view.html"><span class="glyphicon glyphicon-barcode" ></span> Scan</a> </li>
+            <!-- today    --><li> <a href="#"><span class="glyphicon glyphicon-calendar"></span> Today</a> </li>
+            <!-- patients --><li class="active"> <a href="#"><span class="glyphicon glyphicon-user"    ></span> Patients</a> </li>
+            <!-- devices  --><li> <a href="#"><span class="glyphicon glyphicon-record"  ></span> Devices</a> </li>
+            <!-- all      --><li> <a href="#"><span class="glyphicon glyphicon-list"    ></span> All</a> </li>
+            <!-- metrics  --><li> <a href="#"><span class="glyphicon glyphicon-stats"   ></span> Metrics</a> </li>
+
+            <!-- simple way to fill height instead of doing a html/body height 100% trick -->
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+          </ul>
+        </div> 
+      </div>
+
+
+      <div class="row hidden-portrait">
+
+        <!-- hack for fixed position column to fill in space-->
+        <div class="col-xs-3">
+          &nbsp;
+        </div>
+
+        <div class="col-xs-9">
+          <!-- Patient List -->
+          <table class="table table-bordered table-condensed">
+
+            <colgroup class="patient-col"></colgroup>
+            <colgroup class="device-col"></colgroup>
+            <colgroup class="room-col"></colgroup>
+            <colgroup class="notes-col"></colgroup>
+
+            <thead>
+              <tr>
+                <th>Patients</th>
+                <th>Devices</th>
+                <th>Room</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+ 
+            <tbody>
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr class="danger">
+                <td>J.P. Average</td>
+                <td>Catheter (0)</td>
+                <td>1024</td>
+                <td>Elderly</td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Samara</td>
+                <td>IV (2)</td>
+                <td>26</td>
+                <td></td>
+              </tr>
+
+              <tr class="warning">
+                <td>Alex</td>
+                <td>IV (1)</td>
+                <td>200F</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>Joe</td>
+                <td>IV (3)</td>
+                <td>204E</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div> <!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <!-- <script src="js/bootstrap-3.0.0.js"></script> -->
+    <script src="js/bootstrap-wip.js"></script>
+  </body>
+</html>
